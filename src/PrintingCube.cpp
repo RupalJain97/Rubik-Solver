@@ -58,8 +58,8 @@ void PrintingCube(vector<vector<char>> vec)
     {
         cout << "| " << vec[2][j] << " " << vec[2][j + 1] << " " << vec[2][j + 2] << " | ";
         cout << "| " << vec[1][j] << " " << vec[1][j + 1] << " " << vec[1][j + 2] << " | ";
-        cout << "| " << vec[3][j] << " " << vec[3][j + 1] << " " << vec[3][j + 2] << " | ";
         cout << "| " << vec[4][j] << " " << vec[4][j + 1] << " " << vec[4][j + 2] << " | ";
+        cout << "| " << vec[3][j] << " " << vec[3][j + 1] << " " << vec[3][j + 2] << " | ";
         cout << endl;
     }
     cout << "--------- --------- --------- ---------" << endl;

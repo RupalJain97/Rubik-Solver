@@ -14,6 +14,10 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec);
 /// Printing the Cube
 void PrintingCube(vector<vector<char>> vec);
 
+/// Rotation of the Side
+vector<char> rotate_clock(vector<char> vec);
+vector<char> rotate_anti_clock(vector<char> vec);
+
 /// Time Delay
 void delay(unsigned int mseconds);
 
