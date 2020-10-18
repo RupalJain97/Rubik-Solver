@@ -1,16 +1,16 @@
 /// Header files
 #include <bits/stdc++.h>
+#include "headerFiles.h"
 
 using namespace std;
 
+// void PrintingCube(vector<vector<char>> vec);
 void delay(unsigned int mseconds)
 {
     clock_t goal = mseconds + clock();
     while (goal > clock())
         ;
 }
-
-void PrintingCube(vector<vector<char>> vec);
 
 /// Main function
 int main()
@@ -28,7 +28,7 @@ int main()
     cout << "\n\n\t Welcome " << name << " to Rubik's World...";
     cout << endl;
     cout << endl;
-    delay(1000);
+    
 
     /// Initializing Color for each side...
     char color[6] = {'W', 'B', 'R', 'O', 'G', 'Y'};
@@ -47,7 +47,8 @@ int main()
     /// Printing Solved Cube...
     PrintingCube(vec);
     cout << "Colour Coding:  W = White, R = Red, B = Blue, O = Orange, G = Green, Y = Yellow";
-
+    delay(1000);
+    
     /// Exit
     return 0;
     
