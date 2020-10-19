@@ -99,30 +99,30 @@ int main()
     delay(1000);
 
     /// Testing Moves
-    // vec = Orange_Right_Clock(vec);
+    // vec = Green_Right_Clock(vec);
     // PrintingCube(vec);
-    // vec = Orange_Right_Anti_Clock(vec);
+    // vec = Green_Right_Anti_Clock(vec);
     // PrintingCube(vec);
-    // vec = Orange_Left_Clock(vec);
+    // vec = Green_Left_Clock(vec);
     // PrintingCube(vec);
-    // vec = Orange_Left_Anti_Clock(vec);
+    // vec = Green_Left_Anti_Clock(vec);
     // PrintingCube(vec);
-    // vec = Orange_Up_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Up_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Down_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Down_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Front_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Front_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Back_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Back_Anti_Clock(vec);
-    // PrintingCube(vec);
+    vec = Green_Up_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Up_Anti_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Down_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Down_Anti_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Front_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Front_Anti_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Back_Clock(vec);
+    PrintingCube(vec);
+    vec = Green_Back_Anti_Clock(vec);
+    PrintingCube(vec);
 
     /// Printing Solved Cube...
     // PrintingCube(vec);
