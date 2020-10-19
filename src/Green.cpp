@@ -279,7 +279,7 @@ vector<vector<char>> Green_Front_Anti_Clock(vector<vector<char>> vec)
     vec[4][5] = b;
     vec[4][2] = c;
 
-    vec[3] = rotate_clock(vec[3]);
+    vec[3] = rotate_anti_clock(vec[3]);
 
     return vec;
 }
@@ -335,7 +335,7 @@ vector<vector<char>> Green_Back_Anti_Clock(vector<vector<char>> vec)
     vec[2][5] = b;
     vec[2][8] = c;
 
-    vec[1] = rotate_clock(vec[1]);
+    vec[1] = rotate_anti_clock(vec[1]);
 
     return vec;
 }
