@@ -849,5 +849,153 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
     }
     cout << "Stage 4 Completed... YELLOW CROSS in Position" << endl;
 
+    /**
+     *   Stage 5 : Solving YELLOW LAYER
+     */
+    /// Solving CORNERS of YELLOW Layer
+    while (vec[5][0] != 'Y' || vec[5][2] != 'Y' || vec[5][8] != 'Y' || vec[5][6] != 'Y')
+    {
+        /**  Case 1 : No Corners in Position  */
+        if (vec[5][0] != 'Y' && vec[5][2] != 'Y' && vec[5][8] != 'Y' && vec[5][6] != 'Y')
+        {
+            if (vec[4][6] == 'Y')
+            {
+                vec = Blue_Left_Clock(vec);
+                vec = Blue_Down_Clock(vec);
+                vec = Blue_Left_Anti_Clock(vec);
+                vec = Blue_Down_Clock(vec);
+                vec = Blue_Left_Clock(vec);
+                vec = Blue_Down_Clock(vec);
+                vec = Blue_Down_Clock(vec);
+                vec = Blue_Left_Anti_Clock(vec);
+            }
+            else if (vec[1][6] == 'Y')
+            {
+                vec = Red_Left_Clock(vec);
+                vec = Red_Down_Clock(vec);
+                vec = Red_Left_Anti_Clock(vec);
+                vec = Red_Down_Clock(vec);
+                vec = Red_Left_Clock(vec);
+                vec = Red_Down_Clock(vec);
+                vec = Red_Down_Clock(vec);
+                vec = Red_Left_Anti_Clock(vec);
+            }
+            else if (vec[2][6] == 'Y')
+            {
+                vec = Green_Left_Clock(vec);
+                vec = Green_Down_Clock(vec);
+                vec = Green_Left_Anti_Clock(vec);
+                vec = Green_Down_Clock(vec);
+                vec = Green_Left_Clock(vec);
+                vec = Green_Down_Clock(vec);
+                vec = Green_Down_Clock(vec);
+                vec = Green_Left_Anti_Clock(vec);
+            }
+            else if (vec[3][6] == 'Y')
+            {
+                vec = Orange_Left_Clock(vec);
+                vec = Orange_Down_Clock(vec);
+                vec = Orange_Left_Anti_Clock(vec);
+                vec = Orange_Down_Clock(vec);
+                vec = Orange_Left_Clock(vec);
+                vec = Orange_Down_Clock(vec);
+                vec = Orange_Down_Clock(vec);
+                vec = Orange_Left_Anti_Clock(vec);
+            }
+        }
+
+        /**  Case 2 : One Corner in position   */
+        else if (vec[5][2] == 'Y' && vec[5][0] != 'Y' && vec[5][8] != 'Y' && vec[5][6] != 'Y')
+        {
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+        }
+        else if (vec[5][0] == 'Y' && vec[5][2] != 'Y' && vec[5][8] != 'Y' && vec[5][6] != 'Y')
+        {
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+        }
+        else if (vec[5][6] == 'Y' && vec[5][0] != 'Y' && vec[5][2] != 'Y' && vec[5][8] != 'Y')
+        {
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+        }
+        else if (vec[5][8] == 'Y' && vec[5][0] != 'Y' && vec[5][2] != 'Y' && vec[5][6] != 'Y')
+        {
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+        }
+
+        /**  Case 3 : Any Two Corners in Position  */
+        else if (vec[1][8] == 'Y')
+        {
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+        }
+        else if (vec[2][8] == 'Y')
+        {
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+        }
+        else if (vec[3][8] == 'Y')
+        {
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+        }
+        else if (vec[4][8] == 'Y')
+        {
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+        }
+    }
+    cout << "Stage 5 Completed... YELLOW LAYER in Position" << endl;
     return vec;
 }
