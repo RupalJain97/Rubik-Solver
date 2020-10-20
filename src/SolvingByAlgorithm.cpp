@@ -634,7 +634,6 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Down_Anti_Clock(vec);
             vec = Blue_Front_Anti_Clock(vec);
         }
-        PrintingCube(vec);
     }
     
     /// Solving RED--GREEN Edge in Middle Layer
@@ -706,7 +705,6 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Down_Anti_Clock(vec);
             vec = Green_Front_Anti_Clock(vec);
         }
-        // PrintingCube(vec);
     }
     
     /// Solving ORANGE--GREEN Edge in Middle Layer
@@ -767,7 +765,6 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Down_Anti_Clock(vec);
             vec = Orange_Front_Anti_Clock(vec);
         }
-        // PrintingCube(vec);
     }
     cout << "Stage 3 Completed... MIDDLE LAYER in Position" << endl;
 
