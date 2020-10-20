@@ -263,11 +263,10 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Up_Anti_Clock(vec);
         }
     }
-    PrintingCube(vec);
     cout << "Stage 1 Completed... WHITE CROSS in Position" << endl;
 
     /**
-     *   Stage 2 : Solving WHITE LAYER
+     *   Stage 2 : Solving WHITE CORNERS in UPPER Layer
      */
     /// Solving RED--BLUE--WHITE Corner in Top Layer
     while (vec[0][6] != 'W' || vec[2][2] != 'R' || vec[1][0] != 'B')
@@ -769,7 +768,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
     cout << "Stage 3 Completed... MIDDLE LAYER in Position" << endl;
 
     /**
-     *   Stage 4 : Solving YELLOW CROSS in Bottom Layer
+     *   Stage 4 : Solving YELLOW CROSS in BOTTOM Layer
      */
     /// Solving YELLOW CROSS
     while (vec[5][1] != 'Y' || vec[5][5] != 'Y' || vec[5][7] != 'Y' || vec[5][3] != 'Y')
@@ -997,5 +996,142 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
     cout << "Stage 5 Completed... YELLOW LAYER in Position" << endl;
+
+    /**
+     *   Stage 6 : Solving YELLOW CORNERS in BOTTOM Layer
+     */
+    /// Solving CORNERS of YELLOW Layer
+    while (vec[1][8] != 'B' || vec[1][6] != 'B' || vec[2][8] != 'R' || vec[2][6] != 'R' || vec[3][8] != 'G' || vec[3][6] != 'G' || vec[4][8] != 'O' || vec[4][6] != 'O')
+    {
+        /**  Adjacent Corners  */
+        if (vec[2][8] == 'R' && vec[2][6] == 'R')
+        {
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Front_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Back_Clock(vec);
+            vec = Orange_Back_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Front_Anti_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Back_Clock(vec);
+            vec = Orange_Back_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+        }
+        if (vec[3][8] == 'G' && vec[3][6] == 'G')
+        {
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Back_Clock(vec);
+            vec = Blue_Back_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Front_Anti_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Back_Clock(vec);
+            vec = Blue_Back_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+        }
+        if (vec[4][8] == 'O' && vec[4][6] == 'O')
+        {
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Front_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+        }
+        if (vec[1][8] == 'B' && vec[1][6] == 'B')
+        {
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Front_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+        }
+        else if ((vec[2][8] == 'B' && vec[2][6] == 'B') || (vec[3][8] == 'R' && vec[3][6] == 'R') || (vec[4][8] == 'G' && vec[4][6] == 'G') || (vec[1][8] == 'O' && vec[1][6] == 'O'))
+        {
+            vec = Blue_Down_Clock(vec);
+        }
+        else if ((vec[4][8] == 'B' && vec[4][6] == 'B') || (vec[1][8] == 'R' && vec[1][6] == 'R') || (vec[2][8] == 'G' && vec[2][6] == 'G') || (vec[3][8] == 'O' && vec[3][6] == 'O'))
+        {
+            vec = Blue_Down_Anti_Clock(vec);
+        }
+        else if ((vec[3][8] == 'B' && vec[3][6] == 'B') || (vec[4][8] == 'R' && vec[4][6] == 'R') || (vec[1][8] == 'G' && vec[1][6] == 'G') || (vec[2][8] == 'O' && vec[2][6] == 'O'))
+        {
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+        }
+
+        /**  Diagonal Corners   */
+        else if (vec[1][6] == 'B' && vec[2][8] == 'R' && vec[3][6] == 'G' && vec[4][8] == 'O')
+        {
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Front_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Back_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+        }
+        else if (vec[2][6] == 'R' && vec[3][8] == 'G' && vec[4][6] == 'O' && vec[1][8] == 'B')
+        {
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Front_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Back_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+        }
+        else if ((vec[1][6] == 'R' && vec[2][8] == 'G' && vec[3][6] == 'O' && vec[4][8] == 'B') ||
+                 (vec[4][6] == 'B' && vec[1][8] == 'R' && vec[2][6] == 'G' && vec[3][8] == 'O'))
+        {
+            vec = Blue_Down_Anti_Clock(vec);
+        }
+        else if ((vec[2][6] == 'B' && vec[3][8] == 'R' && vec[4][6] == 'G' && vec[1][8] == 'O') ||
+                 (vec[3][6] == 'R' && vec[4][8] == 'G' && vec[1][6] == 'O' && vec[2][8] == 'B'))
+        {
+            vec = Blue_Down_Clock(vec);
+        }
+        else if ((vec[3][6] == 'B' && vec[4][8] == 'R' && vec[1][6] == 'G' && vec[2][8] == 'O') ||
+                 (vec[4][6] == 'R' && vec[1][8] == 'G' && vec[2][6] == 'O' && vec[3][8] == 'B'))
+        {
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+        }
+    }
+    cout << "Stage 6 Completed... YELLOW CORNERS in Position" << endl;
     return vec;
 }
