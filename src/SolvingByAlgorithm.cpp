@@ -79,7 +79,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Red_Up_Anti_Clock(vec);
         }
     }
-    // PrintingCube(vec);
+
     /// Solving ORANGE--WHITE Edge in Top Layer
     while (vec[0][5] != 'W' || vec[4][1] != 'O')
     {
@@ -147,7 +147,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Up_Anti_Clock(vec);
         }
     }
-    // PrintingCube(vec);
+
     /// Solving GREEN--WHITE Edge in Top Layer
     while (vec[0][1] != 'W' || vec[3][1] != 'G')
     {
@@ -208,7 +208,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Up_Anti_Clock(vec);
         }
     }
-    // PrintingCube(vec);
+
     /// Solving RED--WHITE Edge in Top Layer
     while (vec[0][3] != 'W' || vec[2][1] != 'R')
     {
@@ -263,7 +263,6 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Up_Anti_Clock(vec);
         }
     }
-    // PrintingCube(vec);
     cout << "Stage 1 Completed... WHITE CROSS in Position" << endl;
 
     /**
@@ -423,14 +422,14 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Down_Clock(vec);
         }
     }
-    
+
     /// Solving GREEN--RED--WHITE Corner in Top Layer
     while (vec[0][0] != 'W' || vec[3][2] != 'G' || vec[2][0] != 'R')
     {
         /**  If Corner is in Bottom Layer  */
         if ((vec[4][8] == 'W' || vec[3][6] == 'W' || vec[5][8] == 'W') &&
-                 (vec[4][8] == 'G' || vec[3][6] == 'G' || vec[5][8] == 'G') &&
-                 (vec[4][8] == 'R' || vec[3][6] == 'R' || vec[5][8] == 'R'))
+            (vec[4][8] == 'G' || vec[3][6] == 'G' || vec[5][8] == 'G') &&
+            (vec[4][8] == 'R' || vec[3][6] == 'R' || vec[5][8] == 'R'))
         {
             vec = Green_Down_Clock(vec);
         }
@@ -456,7 +455,322 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Down_Clock(vec);
         }
     }
+    // PrintingCube(vec);
     cout << "Stage 2 Completed... WHITE LAYER in Position" << endl;
+    
+    /**
+     *   Stage 3 : Solving MIDDLE LAYER
+     */
+    /// Solving RED--BLUE Edge in Middle Layer
+    while (vec[1][3] != 'B' || vec[2][5] != 'R')
+    {
+        /**  If Edge is in Bottom Layer  */
+        if (vec[2][7] == 'B' && vec[5][3] == 'R')
+        {
+            vec = Blue_Down_Clock(vec);
+        }
+        else if (vec[1][7] == 'R' && vec[5][1] == 'B')
+        {
+            vec = Red_Down_Anti_Clock(vec);
+        }
+        else if ((vec[4][7] == 'B' && vec[5][5] == 'R') || (vec[4][7] == 'R' && vec[5][5] == 'B'))
+        {
+            vec = Blue_Down_Anti_Clock(vec);
+        }
+        else if ((vec[3][7] == 'B' && vec[5][7] == 'R') || (vec[3][7] == 'R' && vec[5][7] == 'B'))
+        {
+            vec = Blue_Down_Clock(vec);
+        }
+
+        /**  If Edge is in Middle Layer  */
+        else if (vec[1][3] == 'R' && vec[2][5] == 'B')
+        {
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Front_Anti_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+        }
+        else if ((vec[2][3] == 'B' && vec[3][5] == 'R') || (vec[2][3] == 'R' && vec[3][5] == 'B'))
+        {
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Front_Clock(vec);
+        }
+        else if ((vec[3][3] == 'B' && vec[4][5] == 'R') || (vec[3][3] == 'R' && vec[4][5] == 'B'))
+        {
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Front_Clock(vec);
+        }
+        else if ((vec[4][3] == 'B' && vec[1][5] == 'R') || (vec[4][3] == 'R' && vec[1][5] == 'B'))
+        {
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Front_Anti_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Front_Clock(vec);
+        }
+
+        /// Apply Right Shift Algo from Blue
+        if (vec[1][7] == 'B' && vec[5][1] == 'R')
+        {
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Front_Anti_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+        }
+        /// Apply Left Shift Algo from Red
+        else if (vec[2][7] == 'R' && vec[5][3] == 'B')
+        {
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Right_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Right_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Front_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+        }
+    }
+
+    /// Solving ORANGE--BLUE Edge in Middle Layer
+    while (vec[1][5] != 'B' || vec[4][3] != 'O')
+    {
+        /**  If Edge is in Bottom Layer  */
+        if (vec[4][7] == 'B' && vec[5][5] == 'O')
+        {
+            vec = Blue_Down_Anti_Clock(vec);
+        }
+        else if (vec[1][7] == 'O' && vec[5][1] == 'B')
+        {
+            vec = Orange_Down_Clock(vec);
+        }
+        else if ((vec[3][7] == 'B' && vec[5][7] == 'O') || (vec[3][7] == 'O' && vec[5][7] == 'B'))
+        {
+            vec = Orange_Down_Anti_Clock(vec);
+        }
+        else if ((vec[2][7] == 'B' && vec[5][3] == 'O') || (vec[2][7] == 'O' && vec[5][3] == 'B'))
+        {
+            vec = Blue_Down_Clock(vec);
+        }
+
+        /**  If Edge is in Middle Layer  */
+        else if (vec[4][3] == 'B' && vec[1][5] == 'O')
+        {
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Front_Anti_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Front_Clock(vec);
+        }
+        else if ((vec[3][3] == 'B' && vec[4][5] == 'O') || (vec[3][3] == 'O' && vec[4][5] == 'B'))
+        {
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Front_Clock(vec);
+        }
+        else if ((vec[2][3] == 'B' && vec[3][5] == 'O') || (vec[2][3] == 'O' && vec[3][5] == 'B'))
+        {
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Front_Clock(vec);
+        }
+
+        /// Apply Right Shift Algo from Blue
+        if (vec[4][7] == 'O' && vec[5][5] == 'B')
+        {
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Left_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Left_Anti_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Front_Anti_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Front_Clock(vec);
+        }
+        /// Apply Left Shift Algo from Red
+        else if (vec[1][7] == 'B' && vec[5][1] == 'O')
+        {
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Right_Anti_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Right_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Front_Anti_Clock(vec);
+        }
+        PrintingCube(vec);
+    }
+    
+    /// Solving RED--GREEN Edge in Middle Layer
+    while (vec[2][3] != 'R' || vec[3][5] != 'G')
+    {
+        /**  If Edge is in Bottom Layer  */
+        if (vec[2][7] == 'G' && vec[5][3] == 'R')
+        {
+            vec = Green_Down_Anti_Clock(vec);
+        }
+        else if (vec[3][7] == 'R' && vec[5][7] == 'G')
+        {
+            vec = Red_Down_Clock(vec);
+        }
+        else if ((vec[4][7] == 'G' && vec[5][5] == 'R') || (vec[4][7] == 'R' && vec[5][5] == 'G'))
+        {
+            vec = Green_Down_Clock(vec);
+        }
+        else if ((vec[1][7] == 'G' && vec[5][1] == 'R') || (vec[1][7] == 'R' && vec[5][1] == 'G'))
+        {
+            vec = Red_Down_Anti_Clock(vec);
+        }
+
+        /**  If Edge is in Middle Layer  */
+        if ((vec[3][3] == 'G' && vec[4][5] == 'R') || (vec[3][3] == 'R' && vec[4][5] == 'G'))
+        {
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Front_Clock(vec);
+        }
+        else if (vec[2][3] == 'G' && vec[3][5] == 'R')
+        {
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Front_Clock(vec);
+        }
+
+        /// Apply Right Shift Algo from Blue
+        if (vec[2][7] == 'R' && vec[5][3] == 'G')
+        {
+            vec = Red_Down_Clock(vec);
+            vec = Red_Left_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Left_Anti_Clock(vec);
+            vec = Red_Down_Anti_Clock(vec);
+            vec = Red_Front_Anti_Clock(vec);
+            vec = Red_Down_Clock(vec);
+            vec = Red_Front_Clock(vec);
+        }
+        /// Apply Left Shift Algo from Red
+        else if (vec[3][7] == 'G' && vec[5][7] == 'R')
+        {
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Right_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Right_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Front_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+        }
+        // PrintingCube(vec);
+    }
+    
+    /// Solving ORANGE--GREEN Edge in Middle Layer
+    while (vec[3][3] != 'G' || vec[4][5] != 'O')
+    {
+        /**  If Edge is in Bottom Layer  */
+        if (vec[3][7] == 'O' && vec[5][7] == 'G')
+        {
+            vec = Orange_Down_Anti_Clock(vec);
+        }
+        else if (vec[4][7] == 'G' && vec[5][5] == 'O')
+        {
+            vec = Green_Down_Clock(vec);
+        }
+        else if ((vec[1][7] == 'G' && vec[5][1] == 'O') || (vec[1][7] == 'O' && vec[5][1] == 'G'))
+        {
+            vec = Orange_Down_Clock(vec);
+        }
+        else if ((vec[2][7] == 'G' && vec[5][3] == 'O') || (vec[2][7] == 'O' && vec[5][3] == 'G'))
+        {
+            vec = Green_Down_Anti_Clock(vec);
+        }
+
+        /**  If Edge is in Middle Layer  */
+        if (vec[3][3] == 'O' && vec[4][5] == 'G')
+        {
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Front_Clock(vec);
+        }
+
+        /// Apply Right Shift Algo from Blue
+        if (vec[3][7] == 'G' && vec[5][7] == 'O')
+        {
+            vec = Green_Down_Clock(vec);
+            vec = Green_Left_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Left_Anti_Clock(vec);
+            vec = Green_Down_Anti_Clock(vec);
+            vec = Green_Front_Anti_Clock(vec);
+            vec = Green_Down_Clock(vec);
+            vec = Green_Front_Clock(vec);
+        }
+        /// Apply Left Shift Algo from Red
+        else if (vec[4][7] == 'O' && vec[5][5] == 'G')
+        {
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Right_Anti_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Right_Clock(vec);
+            vec = Orange_Down_Clock(vec);
+            vec = Orange_Front_Clock(vec);
+            vec = Orange_Down_Anti_Clock(vec);
+            vec = Orange_Front_Anti_Clock(vec);
+        }
+        // PrintingCube(vec);
+    }
+    cout << "Stage 3 Completed... MIDDLE LAYER in Position" << endl;
+
 
     return vec;
 }
