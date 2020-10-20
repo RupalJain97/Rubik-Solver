@@ -1020,7 +1020,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Left_Clock(vec);
             vec = Orange_Down_Anti_Clock(vec);
         }
-        if (vec[3][8] == 'G' && vec[3][6] == 'G')
+        else if (vec[3][8] == 'G' && vec[3][6] == 'G')
         {
             vec = Blue_Left_Anti_Clock(vec);
             vec = Blue_Front_Clock(vec);
@@ -1036,7 +1036,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Left_Clock(vec);
             vec = Blue_Down_Anti_Clock(vec);
         }
-        if (vec[4][8] == 'O' && vec[4][6] == 'O')
+        else if (vec[4][8] == 'O' && vec[4][6] == 'O')
         {
             vec = Red_Left_Anti_Clock(vec);
             vec = Red_Front_Clock(vec);
@@ -1052,7 +1052,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Red_Left_Clock(vec);
             vec = Red_Down_Anti_Clock(vec);
         }
-        if (vec[1][8] == 'B' && vec[1][6] == 'B')
+        else if (vec[1][8] == 'B' && vec[1][6] == 'B')
         {
             vec = Green_Left_Anti_Clock(vec);
             vec = Green_Front_Clock(vec);
@@ -1133,5 +1133,203 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
     cout << "Stage 6 Completed... YELLOW CORNERS in Position" << endl;
+
+    /**
+     *   Stage 7 : Solving BOTTOM LAYER
+     */
+    /// Solving Edges of YELLOW Layer
+    while (vec[1][7] != 'B' || vec[2][7] != 'R' || vec[3][7] != 'G' || vec[4][7] != 'O')
+    {
+        if (vec[1][7] == 'B')
+        {
+            /// Anti-Clockwise
+            if (vec[3][7] == 'O')
+            {
+                vec = Green_Front_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Down_Anti_Clock(vec);
+                vec = Green_Right_Clock(vec);
+                vec = Green_Left_Anti_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Right_Anti_Clock(vec);
+                vec = Green_Left_Clock(vec);
+                vec = Green_Down_Anti_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Front_Clock(vec);
+            }
+            /// Clockwise
+            else if (vec[3][7] == 'R')
+            {
+                vec = Green_Front_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Down_Clock(vec);
+                vec = Green_Right_Clock(vec);
+                vec = Green_Left_Anti_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Right_Anti_Clock(vec);
+                vec = Green_Left_Clock(vec);
+                vec = Green_Down_Clock(vec);
+                vec = Green_Front_Clock(vec);
+                vec = Green_Front_Clock(vec);
+            }
+        }
+        else if (vec[2][7] == 'R')
+        {
+            /// Anti-Clockwise
+            if (vec[4][7] == 'B')
+            {
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Down_Anti_Clock(vec);
+                vec = Orange_Right_Clock(vec);
+                vec = Orange_Left_Anti_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Right_Anti_Clock(vec);
+                vec = Orange_Left_Clock(vec);
+                vec = Orange_Down_Anti_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+            }
+            /// Clockwise
+            else if (vec[4][7] == 'G')
+            {
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Down_Clock(vec);
+                vec = Orange_Right_Clock(vec);
+                vec = Orange_Left_Anti_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Right_Anti_Clock(vec);
+                vec = Orange_Left_Clock(vec);
+                vec = Orange_Down_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+                vec = Orange_Front_Clock(vec);
+            }
+        }
+        else if (vec[3][7] == 'G')
+        {
+            /// Anti-Clockwise
+            if (vec[1][7] == 'R')
+            {
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Down_Anti_Clock(vec);
+                vec = Blue_Right_Clock(vec);
+                vec = Blue_Left_Anti_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Right_Anti_Clock(vec);
+                vec = Blue_Left_Clock(vec);
+                vec = Blue_Down_Anti_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+            }
+            /// Clockwise
+            else if (vec[1][7] == 'O')
+            {
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Down_Clock(vec);
+                vec = Blue_Right_Clock(vec);
+                vec = Blue_Left_Anti_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Right_Anti_Clock(vec);
+                vec = Blue_Left_Clock(vec);
+                vec = Blue_Down_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+                vec = Blue_Front_Clock(vec);
+            }
+        }
+        else if (vec[4][7] == 'O')
+        {
+            /// Anti-Clockwise
+            if (vec[2][7] == 'G')
+            {
+                vec = Red_Front_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Down_Anti_Clock(vec);
+                vec = Red_Right_Clock(vec);
+                vec = Red_Left_Anti_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Right_Anti_Clock(vec);
+                vec = Red_Left_Clock(vec);
+                vec = Red_Down_Anti_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Front_Clock(vec);
+            }
+            /// Clockwise
+            else if (vec[2][7] == 'B')
+            {
+                vec = Red_Front_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Down_Clock(vec);
+                vec = Red_Right_Clock(vec);
+                vec = Red_Left_Anti_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Right_Anti_Clock(vec);
+                vec = Red_Left_Clock(vec);
+                vec = Red_Down_Clock(vec);
+                vec = Red_Front_Clock(vec);
+                vec = Red_Front_Clock(vec);
+            }
+        }
+        /// Anti-Clockwise
+        else if (vec[1][7] == 'R')
+        {
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Right_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Right_Anti_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Anti_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+        }
+        /// Clockwise
+        else if (vec[1][7] == 'O')
+        {
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Right_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Right_Anti_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+        }
+        else if (vec[1][7] == 'G')
+        {
+            /// Clockwise
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Right_Clock(vec);
+            vec = Blue_Left_Anti_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Right_Anti_Clock(vec);
+            vec = Blue_Left_Clock(vec);
+            vec = Blue_Down_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+            vec = Blue_Front_Clock(vec);
+        }
+    }
+    cout << "Stage 7 Completed... YELLOW EDGES in Position" << endl;
+
     return vec;
 }
