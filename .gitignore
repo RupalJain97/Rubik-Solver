@@ -1,5 +1,0 @@
-# ignoring header file till project completion
-head/headerFiles.h
-
-# ignoring Solving by Reverse
-src/SolvingByReverse.cpp

@@ -9,7 +9,6 @@ using namespace std;
 /// Solution
 vector<vector<char>> SolvingByUser(vector<vector<char>> vec);
 vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec);
-vector<vector<char>> SolvingByReverse(vector<vector<char>> vec, string str);
 
 
 /// Printing the Cube

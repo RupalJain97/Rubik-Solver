@@ -1,10 +1,11 @@
+/// Header Files
 #include <bits/stdc++.h>
 #include "headerFiles.h"
 
 using namespace std;
 
 /**
- *   Skeleton of the Cube
+ *   Skeleton of the Rubik's Cube
  * 
  *                 ------------
  *                 | W0 W1 W2 |
@@ -17,10 +18,12 @@ using namespace std;
  *   | R6 R7 R8 |  | B6 B7 B8 |  | O6 O7 O8 |  | G6 G7 G8 | 
  *   ------------  ------------  ------------  ------------
  *                 ------------
- *                 | W0 W1 W2 | 
- *                 | W3 W4 W5 | 
- *                 | W6 W7 W8 | 
+ *                 | Y0 Y1 Y2 | 
+ *                 | Y3 Y4 Y5 | 
+ *                 | Y6 Y7 Y8 | 
  *                 ------------
+ * 
+ *  Colour Coding:  W = White, R = Red, B = Blue, O = Orange, G = Green, Y = Yellow
  * 
  *  Vec = {
  *          0 : WHITE
@@ -37,11 +40,12 @@ using namespace std;
 void PrintingCube(vector<vector<char>> vec)
 {
     /// Printing WHITE Layer...
+    cout << endl;
     int cnt = 0;
-    cout << "          ---------" << endl;
+    cout << "           ---------" << endl;
     for (int i = 0; i < 3; i++)
     {
-        cout << "          ";
+        cout << "           ";
         cout << "| ";
         for (int j = 0; j < 3; j++)
         {
@@ -50,26 +54,26 @@ void PrintingCube(vector<vector<char>> vec)
         }
         cout << "|" << endl;
     }
-    cout << "          ---------" << endl;
+    cout << "           ---------" << endl;
 
-    /// Printing RED, BLUE, ORANGE, GREEN Layer...
-    cout << "--------- --------- --------- ---------" << endl;
+    /// Printing RED, BLUE, ORANGE and GREEN Layer...
+    cout << " --------- --------- --------- ---------" << endl;
     for (int j = 0; j < 9; j += 3)
     {
-        cout << "| " << vec[2][j] << " " << vec[2][j + 1] << " " << vec[2][j + 2] << " | ";
+        cout << " | " << vec[2][j] << " " << vec[2][j + 1] << " " << vec[2][j + 2] << " | ";
         cout << "| " << vec[1][j] << " " << vec[1][j + 1] << " " << vec[1][j + 2] << " | ";
         cout << "| " << vec[4][j] << " " << vec[4][j + 1] << " " << vec[4][j + 2] << " | ";
         cout << "| " << vec[3][j] << " " << vec[3][j + 1] << " " << vec[3][j + 2] << " | ";
         cout << endl;
     }
-    cout << "--------- --------- --------- ---------" << endl;
+    cout << " --------- --------- --------- ---------" << endl;
 
     /// Printing YELLOW Layer...
     cnt = 0;
-    cout << "          ---------" << endl;
+    cout << "           ---------" << endl;
     for (int i = 0; i < 3; i++)
     {
-        cout << "          ";
+        cout << "           ";
         cout << "| ";
         for (int j = 0; j < 3; j++)
         {
@@ -78,6 +82,6 @@ void PrintingCube(vector<vector<char>> vec)
         }
         cout << "|" << endl;
     }
-    cout << "          ---------" << endl;
+    cout << "           ---------" << endl;
     cout << endl;
 }

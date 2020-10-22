@@ -1,3 +1,4 @@
+/// Header Files
 #include <bits/stdc++.h>
 #include "headerFiles.h"
 
@@ -10,9 +11,9 @@ using namespace std;
 vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
 {
     /**
-     *   Stage 1 : Solving WHITE CROSS in TOP Layer
+     *   Stage 1 : Solving WHITE CROSS in Upper Layer
      */
-    /// Solving BLUE--WHITE Edge in Top Layer
+    /// Solving BLUE--WHITE Edge in Upper Layer
     while (vec[0][7] != 'W' || vec[1][1] != 'B')
     {
         /**  If Edge is in Upper Layer  */
@@ -80,7 +81,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
 
-    /// Solving ORANGE--WHITE Edge in Top Layer
+    /// Solving ORANGE--WHITE Edge in Upper Layer
     while (vec[0][5] != 'W' || vec[4][1] != 'O')
     {
         /**  If Edge is in Upper Layer  */
@@ -148,7 +149,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
 
-    /// Solving GREEN--WHITE Edge in Top Layer
+    /// Solving GREEN--WHITE Edge in Upper Layer
     while (vec[0][1] != 'W' || vec[3][1] != 'G')
     {
         /**  If Edge is in Upper Layer  */
@@ -209,7 +210,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
 
-    /// Solving RED--WHITE Edge in Top Layer
+    /// Solving RED--WHITE Edge in Upper Layer
     while (vec[0][3] != 'W' || vec[2][1] != 'R')
     {
         /**  If Edge is in Middle Layer  */
@@ -263,12 +264,12 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Up_Anti_Clock(vec);
         }
     }
-    cout << "Stage 1 Completed... WHITE CROSS in Position" << endl;
+    cout << "  Stage 1 Completed... Solved the WHITE CROSS" << endl;
 
     /**
      *   Stage 2 : Solving WHITE CORNERS in UPPER Layer
      */
-    /// Solving RED--BLUE--WHITE Corner in Top Layer
+    /// Solving RED--BLUE--WHITE Corner in Upper Layer
     while (vec[0][6] != 'W' || vec[2][2] != 'R' || vec[1][0] != 'B')
     {
         /**  If Corner is in Upper Layer  */
@@ -328,7 +329,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
 
-    /// Solving BLUE--ORANGE--WHITE Corner in Top Layer
+    /// Solving BLUE--ORANGE--WHITE Corner in Upper Layer
     while (vec[0][8] != 'W' || vec[1][2] != 'B' || vec[4][0] != 'O')
     {
         /**  If Corner is in Upper Layer  */
@@ -380,7 +381,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
 
-    /// Solving ORANGE--GREEN--WHITE Corner in Top Layer
+    /// Solving ORANGE--GREEN--WHITE Corner in Upper Layer
     while (vec[0][2] != 'W' || vec[4][2] != 'O' || vec[3][0] != 'G')
     {
         /**  If Corner is in Upper Layer  */
@@ -423,7 +424,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
 
-    /// Solving GREEN--RED--WHITE Corner in Top Layer
+    /// Solving GREEN--RED--WHITE Corner in Upper Layer
     while (vec[0][0] != 'W' || vec[3][2] != 'G' || vec[2][0] != 'R')
     {
         /**  If Corner is in Bottom Layer  */
@@ -455,10 +456,10 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Down_Clock(vec);
         }
     }
-    cout << "Stage 2 Completed... WHITE LAYER in Position" << endl;
+    cout << "  Stage 2 Completed... Solved the UPPER LAYER" << endl;
 
     /**
-     *   Stage 3 : Solving MIDDLE LAYER
+     *   Stage 3 : Solving RED, BLUE, ORANGE & GREEN EDGES in MIDDLE LAYER
      */
     /// Solving RED--BLUE Edge in Middle Layer
     while (vec[1][3] != 'B' || vec[2][5] != 'R')
@@ -765,7 +766,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Front_Anti_Clock(vec);
         }
     }
-    cout << "Stage 3 Completed... MIDDLE LAYER in Position" << endl;
+    cout << "  Stage 3 Completed... Solved the MIDDLE LAYER" << endl;
 
     /**
      *   Stage 4 : Solving YELLOW CROSS in BOTTOM Layer
@@ -773,7 +774,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
     /// Solving YELLOW CROSS
     while (vec[5][1] != 'Y' || vec[5][5] != 'Y' || vec[5][7] != 'Y' || vec[5][3] != 'Y')
     {
-        /**  Case 1 : Single Center in Position  */
+        /**  Case 1 : Single Yellow Center in Position  */
         if ((vec[5][1] != 'Y' && vec[5][5] != 'Y' && vec[5][7] != 'Y' && vec[5][3] != 'Y') ||
             (vec[5][1] == 'Y' && vec[5][5] != 'Y' && vec[5][7] != 'Y' && vec[5][3] != 'Y') ||
             (vec[5][1] != 'Y' && vec[5][5] == 'Y' && vec[5][7] != 'Y' && vec[5][3] != 'Y') ||
@@ -788,7 +789,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Front_Anti_Clock(vec);
         }
 
-        /**  Case 2 : L position   */
+        /**  Case 2 : Two Yellow Edge in L position   */
         else if (vec[5][1] == 'Y' && vec[5][3] == 'Y' && vec[5][7] != 'Y' && vec[5][5] != 'Y')
         {
             vec = Green_Front_Clock(vec);
@@ -846,10 +847,10 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Red_Front_Anti_Clock(vec);
         }
     }
-    cout << "Stage 4 Completed... YELLOW CROSS in Position" << endl;
+    cout << "  Stage 4 Completed... Solved the YELLOW CROSS" << endl;
 
     /**
-     *   Stage 5 : Solving YELLOW LAYER
+     *   Stage 5 : Solving YELLOW CORNERS in Bottom Layer
      */
     /// Solving CORNERS of YELLOW Layer
     while (vec[5][0] != 'Y' || vec[5][2] != 'Y' || vec[5][8] != 'Y' || vec[5][6] != 'Y')
@@ -995,13 +996,14 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Left_Anti_Clock(vec);
         }
     }
-    cout << "Stage 5 Completed... YELLOW LAYER in Position" << endl;
+    cout << "  Stage 5 Completed... Solved the YELLOW LAYER" << endl;
 
     /**
-     *   Stage 6 : Solving YELLOW CORNERS in BOTTOM Layer
+     *   Stage 6 : Solving RED, BLUE, ORANGE & GREEN CORNERS in BOTTOM Layer
      */
     /// Solving CORNERS of YELLOW Layer
-    while (vec[1][8] != 'B' || vec[1][6] != 'B' || vec[2][8] != 'R' || vec[2][6] != 'R' || vec[3][8] != 'G' || vec[3][6] != 'G' || vec[4][8] != 'O' || vec[4][6] != 'O')
+    while (vec[1][8] != 'B' || vec[1][6] != 'B' || vec[2][8] != 'R' || vec[2][6] != 'R' ||
+           vec[3][8] != 'G' || vec[3][6] != 'G' || vec[4][8] != 'O' || vec[4][6] != 'O')
     {
         /**  Adjacent Corners  */
         if (vec[2][8] == 'R' && vec[2][6] == 'R')
@@ -1068,15 +1070,18 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Left_Clock(vec);
             vec = Green_Down_Anti_Clock(vec);
         }
-        else if ((vec[2][8] == 'B' && vec[2][6] == 'B') || (vec[3][8] == 'R' && vec[3][6] == 'R') || (vec[4][8] == 'G' && vec[4][6] == 'G') || (vec[1][8] == 'O' && vec[1][6] == 'O'))
+        else if ((vec[2][8] == 'B' && vec[2][6] == 'B') || (vec[3][8] == 'R' && vec[3][6] == 'R') ||
+                 (vec[4][8] == 'G' && vec[4][6] == 'G') || (vec[1][8] == 'O' && vec[1][6] == 'O'))
         {
             vec = Blue_Down_Clock(vec);
         }
-        else if ((vec[4][8] == 'B' && vec[4][6] == 'B') || (vec[1][8] == 'R' && vec[1][6] == 'R') || (vec[2][8] == 'G' && vec[2][6] == 'G') || (vec[3][8] == 'O' && vec[3][6] == 'O'))
+        else if ((vec[4][8] == 'B' && vec[4][6] == 'B') || (vec[1][8] == 'R' && vec[1][6] == 'R') ||
+                 (vec[2][8] == 'G' && vec[2][6] == 'G') || (vec[3][8] == 'O' && vec[3][6] == 'O'))
         {
             vec = Blue_Down_Anti_Clock(vec);
         }
-        else if ((vec[3][8] == 'B' && vec[3][6] == 'B') || (vec[4][8] == 'R' && vec[4][6] == 'R') || (vec[1][8] == 'G' && vec[1][6] == 'G') || (vec[2][8] == 'O' && vec[2][6] == 'O'))
+        else if ((vec[3][8] == 'B' && vec[3][6] == 'B') || (vec[4][8] == 'R' && vec[4][6] == 'R') ||
+                 (vec[1][8] == 'G' && vec[1][6] == 'G') || (vec[2][8] == 'O' && vec[2][6] == 'O'))
         {
             vec = Blue_Down_Clock(vec);
             vec = Blue_Down_Clock(vec);
@@ -1132,17 +1137,17 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Down_Clock(vec);
         }
     }
-    cout << "Stage 6 Completed... YELLOW CORNERS in Position" << endl;
+    cout << "  Stage 6 Completed... Solved the CORNERS of BOTTOM LAYER" << endl;
 
     /**
-     *   Stage 7 : Solving BOTTOM LAYER
+     *   Stage 7 : Solving RED, BLUE, ORANGE & GREEN EDGES in BOTTOM LAYER
      */
     /// Solving Edges of YELLOW Layer
     while (vec[1][7] != 'B' || vec[2][7] != 'R' || vec[3][7] != 'G' || vec[4][7] != 'O')
     {
         if (vec[1][7] == 'B')
         {
-            /// Anti-Clockwise
+            /// Anti-Clockwise Rotation
             if (vec[3][7] == 'O')
             {
                 vec = Green_Front_Clock(vec);
@@ -1158,7 +1163,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
                 vec = Green_Front_Clock(vec);
                 vec = Green_Front_Clock(vec);
             }
-            /// Clockwise
+            /// Clockwise Rotation
             else if (vec[3][7] == 'R')
             {
                 vec = Green_Front_Clock(vec);
@@ -1177,7 +1182,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
         else if (vec[2][7] == 'R')
         {
-            /// Anti-Clockwise
+            /// Anti-Clockwise Rotation
             if (vec[4][7] == 'B')
             {
                 vec = Orange_Front_Clock(vec);
@@ -1193,7 +1198,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
                 vec = Orange_Front_Clock(vec);
                 vec = Orange_Front_Clock(vec);
             }
-            /// Clockwise
+            /// Clockwise Rotation
             else if (vec[4][7] == 'G')
             {
                 vec = Orange_Front_Clock(vec);
@@ -1212,7 +1217,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
         else if (vec[3][7] == 'G')
         {
-            /// Anti-Clockwise
+            /// Anti-Clockwise Rotation
             if (vec[1][7] == 'R')
             {
                 vec = Blue_Front_Clock(vec);
@@ -1228,7 +1233,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
                 vec = Blue_Front_Clock(vec);
                 vec = Blue_Front_Clock(vec);
             }
-            /// Clockwise
+            /// Clockwise Rotation
             else if (vec[1][7] == 'O')
             {
                 vec = Blue_Front_Clock(vec);
@@ -1247,7 +1252,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
         else if (vec[4][7] == 'O')
         {
-            /// Anti-Clockwise
+            /// Anti-Clockwise Rotation
             if (vec[2][7] == 'G')
             {
                 vec = Red_Front_Clock(vec);
@@ -1263,7 +1268,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
                 vec = Red_Front_Clock(vec);
                 vec = Red_Front_Clock(vec);
             }
-            /// Clockwise
+            /// Clockwise Rotation
             else if (vec[2][7] == 'B')
             {
                 vec = Red_Front_Clock(vec);
@@ -1280,7 +1285,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
                 vec = Red_Front_Clock(vec);
             }
         }
-        /// Anti-Clockwise
+        /// Anti-Clockwise Rotation
         else if (vec[1][7] == 'R')
         {
             vec = Blue_Front_Clock(vec);
@@ -1296,25 +1301,9 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Front_Clock(vec);
             vec = Blue_Front_Clock(vec);
         }
-        /// Clockwise
-        else if (vec[1][7] == 'O')
+        /// Clockwise Rotation
+        else if (vec[1][7] == 'O' || vec[1][7] == 'G')
         {
-            vec = Blue_Front_Clock(vec);
-            vec = Blue_Front_Clock(vec);
-            vec = Blue_Down_Clock(vec);
-            vec = Blue_Right_Clock(vec);
-            vec = Blue_Left_Anti_Clock(vec);
-            vec = Blue_Front_Clock(vec);
-            vec = Blue_Front_Clock(vec);
-            vec = Blue_Right_Anti_Clock(vec);
-            vec = Blue_Left_Clock(vec);
-            vec = Blue_Down_Clock(vec);
-            vec = Blue_Front_Clock(vec);
-            vec = Blue_Front_Clock(vec);
-        }
-        else if (vec[1][7] == 'G')
-        {
-            /// Clockwise
             vec = Blue_Front_Clock(vec);
             vec = Blue_Front_Clock(vec);
             vec = Blue_Down_Clock(vec);
@@ -1329,7 +1318,9 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Front_Clock(vec);
         }
     }
-    cout << "Stage 7 Completed... YELLOW EDGES in Position" << endl;
+    cout << "  Stage 7 Completed... Solved the BOTTOM LAYER" << endl;
+    cout <<endl;
 
+    cout << " Hurray!!! We have Solved the Rubik's Cube..... :)" << endl;
     return vec;
 }

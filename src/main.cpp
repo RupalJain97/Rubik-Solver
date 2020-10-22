@@ -1,4 +1,4 @@
-/// Header files
+/// Header Files
 #include <bits/stdc++.h>
 #include "headerFiles.h"
 
@@ -11,12 +11,12 @@ void delay(unsigned int mseconds)
         ;
 }
 
-/// Rotating Clockwise
+/// Rotation of Side Clockwise
 vector<char> rotate_clock(vector<char> vec)
 {
-    int a = vec[2];
-    int b = vec[1];
-    int c = vec[0];
+    char a = vec[2];
+    char b = vec[1];
+    char c = vec[0];
 
     vec[2] = vec[0];
     vec[1] = vec[3];
@@ -37,12 +37,12 @@ vector<char> rotate_clock(vector<char> vec)
     return vec;
 }
 
-/// Rotating Anti-Clockwise
+/// Rotation of Side Anti-Clockwise
 vector<char> rotate_anti_clock(vector<char> vec)
 {
-    int a = vec[0];
-    int b = vec[1];
-    int c = vec[2];
+    char a = vec[0];
+    char b = vec[1];
+    char c = vec[2];
 
     vec[0] = vec[2];
     vec[1] = vec[5];
@@ -67,7 +67,7 @@ vector<char> rotate_anti_clock(vector<char> vec)
 int main()
 {
     /**
-     *   Welcome to the Game.....
+     *   Welcome to Rubik's Cube World.....
      */
     /// Staring the Game.....
     // string name;
@@ -76,51 +76,13 @@ int main()
     // cin >> name;
     // name[0] = toupper(name[0]);
     // system("CLS");
-    // cout << "\n\n\t Welcome " << name << " to Rubik's World.....";
+    // cout << "\n\n\t Welcome " << name << " to Rubik's Cube World!!!.....";
     // cout << endl;
     // cout << endl;
 
     /// Initializing Color for each side...
     char color[6] = {'W', 'B', 'R', 'G', 'O', 'Y'};
     char ans = 'y';
-
-    vector<vector<char>> vec(6, vector<char>(9));
-    for (int i = 0; i < 6; i++)
-    {
-        for (int j = 0; j < 9; j++)
-        {
-            char ch = color[i];
-            vec[i][j] = ch;
-        }
-    }
-
-    delay(1000);
-
-    /// Testing Moves
-    // vec = Orange_Right_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Right_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Left_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Left_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Up_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Up_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Down_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Down_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Front_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Front_Anti_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Back_Clock(vec);
-    // PrintingCube(vec);
-    // vec = Orange_Back_Anti_Clock(vec);
-    // PrintingCube(vec);
 
     while (ans == 'y' || ans == 'Y')
     {
@@ -135,27 +97,26 @@ int main()
         }
 
         PrintingCube(vec);
+        cout << " Colour Coding:  W = White, R = Red, B = Blue, O = Orange, G = Green, Y = Yellow" << endl;
         cout << endl;
-        cout << "Colour Coding:  W = White, R = Red, B = Blue, O = Orange, G = Green, Y = Yellow";
 
-        /// Taking Input to Scramble the Cube.....
-        cout << "\n\n You have to Scramble the Cube, type {A B C D E..... or ABCDE....} from the moves given below: ";
-        cout << "\n  A: Right Clockwise ";
-        cout << "\n  B: Right Anti Clockwise ";
-        cout << "\n  C: Left Clockwise ";
-        cout << "\n  D: Left Anti Clockwise ";
-        cout << "\n  E: Up Clockwise ";
-        cout << "\n  F: Up Anti Clockwise ";
-        cout << "\n  G: Down Clockwise ";
-        cout << "\n  H: Down Anti Clockwise ";
-        cout << "\n  I: Front Clockwise ";
-        cout << "\n  J: Front Anti Clockwise ";
-        cout << "\n  K: Back Clockwise ";
-        cout << "\n  L: Back Anti Clockwise ";
-        cout << "\n Now Enter Sequence to Scramble the Cube: ";
-        string str = "JAZDFCVGBHNMKLQAWSEDRFTGYHUJIKOLPRINCOTJEJSKCGNSIWMJAFKJTOGKASXBCVHRNIJEMSKOMICFUVBFHNJIXWJNVBFHNCDJMXSKMCNVFNCJDSDFGHJKLROWDJVGBHNGVJFCDXWJCNVBGVFDWODCEJHUVJXOKWJVHBFCXCJNVFHNCJDMKXXMCJNEVBFENWXIOZKMQOXSJDCEUHRYGYRUWXIJSOKZPLALSKWDJFHURYGYRUCEIXWOKYURHJFDVYCHGBNTRGFUIJEWISUJKWQSAOXIZLKYUHJFBVUHJFNCIUJKSNXCMNFHURNBFHIDSUDFYGHTRBNSIUYTFVGHBJGNGYUXIOFGKNBGDFGBHRJEIXSUHCYGVFGRJNEKWXJHUGVFBNXKJHVBHNJXKDJEFHRGBVNJFHRGBKFJRHTBNVJFCKMDKFJGHDCNXMCHRVUEJWXKQKXCJNVHBGHVREJCWXNGBRVEJXWJNHWHFCJDXCJNGBVEHWXKOCJNHBGVHCXXKCEFVJNREIJCOWKXQXWMJNREWZQKXNCBVFXWYHRJBFVCUHJNMWQSAOKLWDSYUXHJBNRFDVIOJKTMGFVUYHJNREFDCXGHBWNSAOIKLWQSAXZOKLEDCYHJBNRFVYHBNFVRJFNMVCJKDCXMIOSAKLZOWQSKLAUIEJDNSMXUHJWSNAMXUHJRNFOKLEDSYHWBQNSAIUJRFDIJRFONCBHCYDXWSZQOMKXJNIEHUFRZAPMQKSXHEBURBTYHURFNEDIXWJSGVYXWIJGCXGHVNJDKKCGBHJIWXKENRHVGREJIWXKOECRVHJIWXKOEJHRFJMWECNRVGBRVHNECJWXEGBREJWXKOQPLQWXERVHVUNCJEIMXOWWBGYRVHUEJIWSOXTGHRNUECJIDBGTHRVECJIDWKRVHUFECJIDWGTRUHIJECDWOHRNUECJIDWKOGTHNVRUFJIECWXOKOCWOEJIDNHRUBGTYSWTUHNVIEWKSDMXOWQALYTHFVBRHFJNCEJDKSMXIEOWKSALYUHFJDBNRHJFNMYHFJDWJSGVFHCEJDKXGHFJCDKXGHFJKDFGHJKKJHGFSWEDRTYUIOPXSEDRFTGYBHUNJIKOSXEDCRFVTYBGNUHJIM";
-        // string str;
-        // cin >> str;
+        /// Taking Input from the User to Scramble the Cube.....
+        cout << " You have to Scramble the Cube, type {A B C D E..... or ABCDE....} from the moves given below: " << endl;
+        cout << "  A: Right Clockwise " << endl;
+        cout << "  B: Right Anti Clockwise " << endl;
+        cout << "  C: Left Clockwise " << endl;
+        cout << "  D: Left Anti Clockwise " << endl;
+        cout << "  E: Up Clockwise " << endl;
+        cout << "  F: Up Anti Clockwise " << endl;
+        cout << "  G: Down Clockwise " << endl;
+        cout << "  H: Down Anti Clockwise " << endl;
+        cout << "  I: Front Clockwise " << endl;
+        cout << "  J: Front Anti Clockwise " << endl;
+        cout << "  K: Back Clockwise " << endl;
+        cout << "  L: Back Anti Clockwise " << endl;
+        cout << " Now Enter Sequence to Scramble the Cube: ";
+        string str;
+        cin >> str;
 
         /// Applying Moves to Scramble the Solved Cube.....
         for (int i = 0; i < str.length(); i++)
@@ -216,38 +177,37 @@ int main()
         }
 
         /// prints scrambled cube...
-        cout << " Scrambled Cube is....." << endl
-             << endl;
-        PrintingCube(vec);
         cout << endl;
-
-        cout << " Solving Rubik's Cube..... " << endl;
-        // delay(1000);
-
-        /// Solving by Reverse
-        vec = SolvingByAlgorithm(vec);
-        cout << "\n Solved Rubik's cube is ";
         cout << endl;
+        cout << " Scrambled Cube is....." << endl;
         PrintingCube(vec);
 
         /// Solving Cube.....
-        // cout << "Choose how to solve the Cube.... Type 'C' for Computer to Solve and 'U' to solve youself.... "
-        // char choice;
-        // cin >> choice;
-        // if (choice == 'c' || choice == 'C')
-        // {
-        //     SolvingByAlgorithm(vec);
-        // }
-        // else if (choice == 'u' || choice == 'U')
-        // {
-        //     SolvingByUser(vec);
-        // }
+        cout << " Choose how to solve the Cube....." << endl;
+        cout << "   Type 'C' for Computer to Solve and 'U' to solve youself... " << endl;
+        char choice;
+        cout << "  Enter Choice: ";
+        cin >> choice;
+        cout << endl;
+        if (choice == 'c' || choice == 'C')
+        {
+            cout << " Solving Rubik's Cube..... " << endl;
+            cout << endl;
+            vec = SolvingByAlgorithm(vec);
+        }
+        else if (choice == 'u' || choice == 'U')
+        {
+            cout << " Let's Start Solving Rubik's Cube..... " << endl;
+            cout << endl;
+            vec = SolvingByUser(vec);
+        }
 
         /// Finally prints Solved cube...
-        //cout<<"\n Solved Rubik's cube is ";
-        // PrintingCube(vec);
+        cout << endl;
+        cout << " Solved Rubik's cube is..... " << endl;
+        PrintingCube(vec);
 
-        cout << "\n Want to solve again (y/n): ";
+        cout << " Want to Solve again? (y/n): ";
         cin >> ans;
         vec.clear();
     }
