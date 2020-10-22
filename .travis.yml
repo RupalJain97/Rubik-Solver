@@ -1,3 +1,8 @@
 language: cpp
 compiler: gcc
 os: windows
+stages:
+  - compile
+  - test
+  - name: deploy
+    if: branch = master
