@@ -65,14 +65,21 @@ The solution algorithm consists of 7 stages in general:
 3. Solve *Middle layer edge peices* i.e. *placing Red, Blue, Orange and Green edges in their correct position* as shown below.
 
 ![Rubik Cube Stage 3 Image](/images/Stage3.jpg)
+
 4. Make *a YELLOW Cross in Bottom Layer* as shown below.
+
 ![Rubik Cube Stage 4 Image](/images/Stage4.jpg)
+
 5. Solve *YELLOW corner peices in Bottom Layer* thus *completing Yellow layer* as shown below.
+
 ![Rubik Cube Stage 5 Image](/images/Stage5.jpg)
+
 6. Solve *Bottom layer corner pieces* as shown below.
 
 ![Rubik Cube Stage 6 Image](/images/Stage6.jpg)
+
 7. Solve *Bottom layer edge pieces* to solve the Rubik's Cube as shown below.
+
 ![Rubik Cube Stage 7 Image](/images/Stage7.jpg)
 
 ## Execution
