@@ -59,16 +59,16 @@ Note that clockwise and counter-clockwise turns are viewed with respect to the c
 The solution algorithm consists of 7 stages in general:
 
 1. Solve *Upper layer edge pieces* thus *making a WHITE Cross* as shown below.
-![Rubik Cube Stage 1 Image](/images/Stage1.jpg = 300x350)
+   ![Rubik Cube Stage 1 Image](/images/Stage1.jpg)
 2. Solve *Upper layer corner pieces* and *completing WHITE Layer* as shown below.
- ![Rubik Cube Stage 2 Image](/images/Stage2.jpg)
+   ![Rubik Cube Stage 2 Image](/images/Stage2.jpg)
 3. Solve *Middle layer edge peices* i.e. *placing Red, Blue, Orange and Green edges in their correct position* as shown below.
 
    ![Rubik Cube Stage 3 Image](/images/Stage3.jpg)
 
 4. Make *a YELLOW Cross in Bottom Layer* as shown below.
 
-    ![Rubik Cube Stage 4 Image](/images/Stage4.jpg)
+   ![Rubik Cube Stage 4 Image](/images/Stage4.jpg)
 
 5. Solve *YELLOW corner peices in Bottom Layer* thus *completing Yellow layer* as shown below.
 
