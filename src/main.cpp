@@ -70,15 +70,15 @@ int main()
      *   Welcome to Rubik's Cube World.....
      */
     /// Staring the Game.....
-    // string name;
-    // cout << " \t\t\t Welcome to Rubik's Cube!!! " << endl;
-    // cout << " Enter your Name: ";
-    // cin >> name;
-    // name[0] = toupper(name[0]);
-    // system("CLS");
-    // cout << "\n\n\t Welcome " << name << " to Rubik's Cube World!!!.....";
-    // cout << endl;
-    // cout << endl;
+    string name;
+    cout << " \t\t Welcome to Rubik's Cube!!! " << endl;
+    cout << " Enter your Name: ";
+    cin >> name;
+    name[0] = toupper(name[0]);
+    system("CLS");
+    cout << "\n\n\t Welcome " << name << " to Rubik's Cube World!!!.....";
+    cout << endl;
+    cout << endl;
 
     /// Initializing Color for each side...
     char color[6] = {'W', 'B', 'R', 'G', 'O', 'Y'};

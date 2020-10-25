@@ -13,10 +13,10 @@ vector<vector<char>> SolvingByUser(vector<vector<char>> vec)
     cout << " Rules:" << endl;
     cout << "  1) You have to enter the SIDE of the cube and the MOVE to be used." << endl;
     cout << "  2) To enter the SIDE, type following color codes:" << endl;
-    cout << "       'R'/'r' : RED Side" << endl;
-    cout << "       'B'/'b' : BLUE Side" << endl;
-    cout << "       'O'/'o' : ORANGE Side" << endl;
-    cout << "       'G'/'g' : GREEN Side" << endl;
+    cout << "       'R' : RED Side" << endl;
+    cout << "       'B' : BLUE Side" << endl;
+    cout << "       'O' : ORANGE Side" << endl;
+    cout << "       'G' : GREEN Side" << endl;
     cout << "      And" << endl;
     cout << "       'stop'  : To STOP Solving" << endl;
     cout << "  3) To enter the MOVE, type following move codes:" << endl;
