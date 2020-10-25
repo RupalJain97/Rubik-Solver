@@ -1,10 +1,10 @@
 # Rubik's Cube
-### The Simplest and Easiest Way to Solve the Rubik's Cube.
+#### The Simplest and Easiest Way to Solve the Rubik's Cube.
 
 ![Rubik Cube Image](/images/1.jpg)
 
 ## Introduction
-A Rubik’s cube is a 3D combination puzzle that has 6 faces, each face usually has 9 stickers in a 3x3 layout and the objective of the puzzle is to achieve the solved state where each face must be returned to having a unique color. Here I have applied the algorithm that will help solve the Rubik's Cube. It is simple and easy way to learn how to solve the Rubik's Cube very quickly. In my program, there are 2 ways to solve the cube i.e. you have to choose that who will solve... you or computer. Now, first let's understand the model of the cube and then follow the steps I have explained to solve the cube.
+A Rubik’s cube is a 3D combination puzzle that has 6 faces, each face usually has 9 stickers in a 3x3 layout and the objective of the puzzle is to achieve the solved state where each face must be returned to having a unique color. Here I have applied the algorithm that will help solve the Rubik's Cube. It is simple and easy way to learn how to solve the Rubik's Cube very quickly. In my program, there are 2 ways to solve the cube i.e. you have to choose that who will solve... you or computer. 
 
 ## Algorithm
 
@@ -26,7 +26,6 @@ A Rubik’s cube is a 3D combination puzzle that has 6 faces, each face usually 
                 | Y6 Y7 Y8 | 
                 ------------
 
- Colour Coding:  W = White, R = Red, B = Blue, O = Orange, G = Green, Y = Yellow
 ```
 *Fig. 1*: Skeleton of the cube. Color Codes: *W = White*, *R = Red*, *B = Blue*, *O = Orange*, *G = Green*, *Y = Yellow*.
 
@@ -64,12 +63,14 @@ The solution algorithm consists of 7 stages in general:
 2. Solve *Upper layer corner pieces* and *completing WHITE Layer* as shown below.
 ![Rubik Cube Stage 2 Image](/images/Stage2.jpg)
 3. Solve *Middle layer edge peices* i.e. *placing Red, Blue, Orange and Green edges in their correct position* as shown below.
+
 ![Rubik Cube Stage 3 Image](/images/Stage3.jpg)
 4. Make *a YELLOW Cross in Bottom Layer* as shown below.
 ![Rubik Cube Stage 4 Image](/images/Stage4.jpg)
 5. Solve *YELLOW corner peices in Bottom Layer* thus *completing Yellow layer* as shown below.
 ![Rubik Cube Stage 5 Image](/images/Stage5.jpg)
 6. Solve *Bottom layer corner pieces* as shown below.
+
 ![Rubik Cube Stage 6 Image](/images/Stage6.jpg)
 7. Solve *Bottom layer edge pieces* to solve the Rubik's Cube as shown below.
 ![Rubik Cube Stage 7 Image](/images/Stage7.jpg)
