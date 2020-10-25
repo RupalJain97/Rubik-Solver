@@ -1,5 +1,5 @@
 # Rubik's Cube
-### The Simplest and Easiest Way to Solve the Rubik's Cube.
+### A Simple and Easy Way to Solve the Rubik's Cube.
 
    ![Rubik Cube Image](/images/1.jpg)
 
