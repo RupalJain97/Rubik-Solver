@@ -124,7 +124,7 @@ The solution algorithm consists of 7 stages in general:
 Follow these steps to copy this repository to your local directory and execute:
 
 ```
-git clone https://github.com/RupalJain97/Rubik-Cube.git
+git clone https://github.com/RupalJain97/Rubik-Solver.git
 cd Rubik-Cube/
 cd bin/
 ./Rubik-Cube.exe
