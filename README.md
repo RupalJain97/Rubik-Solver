@@ -61,21 +61,27 @@ Each move also has one of the following two operations depending on the rotation
 Here is the glimpse of how the computer will solve Rubik's cube.
 
 ![Board Image](/images/1.jpg)
+
 *Fig. 1*: *Welcome to Rubik World*.
 
 ![Board Image](/images/2.jpg)
+
 *Fig. 2*: *Put in moves to scramble the cube*.
 
 ![Board Image](/images/3.jpg)
+
 *Fig. 3*: *Scrambled cube for computer to solve*.
 
 ![Board Image](/images/4.jpg)
+
 *Fig. 4*: *Cube is getting solved stage by stage*.
 
 ![Board Image](/images/5.jpg)
+
 *Fig. 5*: *Final stage of the solving cube*.
 
 ![Board Image](/images/6.jpg)
+
 *Fig. 6*: *Solved Cube*.
 
 
@@ -123,4 +129,3 @@ cd Rubik-Cube/
 cd bin/
 ./Rubik-Cube.exe
 ```
-
