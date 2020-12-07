@@ -72,6 +72,7 @@ int main()
     /// Staring the Game.....
     string name;
     cout << " \t\t Welcome to Rubik's Cube!!! " << endl;
+    cout << endl;
     cout << " Enter your Name: ";
     cin >> name;
     name[0] = toupper(name[0]);
@@ -96,6 +97,7 @@ int main()
             }
         }
 
+        cout << "\t";
         PrintingCube(vec);
         cout << " Colour Coding:  W = White, R = Red, B = Blue, O = Orange, G = Green, Y = Yellow" << endl;
         cout << endl;

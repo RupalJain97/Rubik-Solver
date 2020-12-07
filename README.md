@@ -1,14 +1,17 @@
-# Rubik's Cube
+# Rubik Solver
+
 #### A Simple and Easy Way to Solve the Rubik's Cube.
 
-   ![Rubik Cube Image](/images/1.jpg)
+   ![Rubik Cube Image](/images/cube.jpg)
 
 ## Introduction
-A Rubik’s cube is a 3D combination puzzle that has 6 faces, each face usually has 9 stickers in a 3x3 layout and the objective of the puzzle is to achieve the solved state where each face must be returned to having a unique color. Here I have applied the algorithm that will help solve the Rubik's Cube. It is simple and easy way to learn how to solve the Rubik's Cube very quickly. In my program, there are 2 ways to solve the cube i.e. you have to choose that who will solve... you or computer. 
+
+A Rubik’s cube is a 3D combination puzzle that has 6 faces, each face usually has 9 stickers in a 3x3 layout and the objective of the puzzle is to achieve the solved state where each face must be returned to having a unique color. Here I have applied the algorithm that will solve the Rubik's Cube. It is simple and easy way to learn how to solve the Rubik's Cube very quickly. In my program, there are 2 ways to solve the cube i.e. you have to choose that who will solve... you or computer. 
 
 ## Algorithm
 
-#### Skeleton of the Rubik's Cube
+### Skeleton of the Rubik's Cube
+
 ```
                   ------------
                   | W0 W1 W2 |
@@ -29,9 +32,10 @@ A Rubik’s cube is a 3D combination puzzle that has 6 faces, each face usually 
 ```
 *Fig. 1*: Skeleton of the cube. Color Codes: *W = White*, *R = Red*, *B = Blue*, *O = Orange*, *G = Green*, *Y = Yellow*.
 
-We are using *pivot face* as the face of the cube to use as a reference for the sequence of moves that will be applied. You should keep this face always in front while solving.
+We are using *pivot face* as the face of the cube to use as a reference for the sequence of moves that will be applied. You should keep this face always in front while applying any move.
  
-#### Basic Moves
+### Basic Moves
+
 Here are all the available moves that can be applied to the cube. Consider the *Blue* face as pivot.
  
 1.  *Blue_Right_Clockwise*
@@ -52,16 +56,43 @@ Each move also has one of the following two operations depending on the rotation
 1. *90-degree rotation_Clockwise*
 2. *90-degree rotation_Anti-Clockwise*
 
-#### Algorithm
+### Snapshots of the Game
+
+Here is the glimpse of how the computer will solve Rubik's cube.
+
+![Board Image](/images/1.jpg)
+*Fig. 1*: *Welcome to Rubik World*.
+
+![Board Image](/images/2.jpg)
+*Fig. 2*: *Put in moves to scramble the cube*.
+
+![Board Image](/images/3.jpg)
+*Fig. 3*: *Scrambled cube for computer to solve*.
+
+![Board Image](/images/4.jpg)
+*Fig. 4*: *Cube is getting solved stage by stage*.
+
+![Board Image](/images/5.jpg)
+*Fig. 5*: *Final stage of the solving cube*.
+
+![Board Image](/images/6.jpg)
+*Fig. 6*: *Solved Cube*.
+
+
+### Algorithm
 
 Note that clockwise and counter-clockwise turns are viewed with respect to the center of the face.
 
 The solution algorithm consists of 7 stages in general:
 
 1. Solve *Upper layer edge pieces* thus *making a WHITE Cross* as shown below.
-  ![Rubik Cube Stage 1 Image](/images/Stage1.jpg)
+
+      ![Rubik Cube Stage 1 Image](/images/Stage1.jpg)
+
 2. Solve *Upper layer corner pieces* and *completing WHITE Layer* as shown below.
+
    ![Rubik Cube Stage 2 Image](/images/Stage2.jpg)
+
 3. Solve *Middle layer edge peices* i.e. *placing Red, Blue, Orange and Green edges in their correct position* as shown below.
 
     ![Rubik Cube Stage 3 Image](/images/Stage3.jpg)
@@ -83,10 +114,13 @@ The solution algorithm consists of 7 stages in general:
    ![Rubik Cube Stage 7 Image](/images/Stage7.jpg)
 
 ## Execution
+
 Follow these steps to copy this repository to your local directory and execute:
+
 ```
 git clone https://github.com/RupalJain97/Rubik-Cube.git
 cd Rubik-Cube/
 cd bin/
 ./Rubik-Cube.exe
 ```
+

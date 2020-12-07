@@ -42,10 +42,10 @@ void PrintingCube(vector<vector<char>> vec)
     /// Printing WHITE Layer...
     cout << endl;
     int cnt = 0;
-    cout << "           ---------" << endl;
+    cout << "\t           ---------" << endl;
     for (int i = 0; i < 3; i++)
     {
-        cout << "           ";
+        cout << "\t           ";
         cout << "| ";
         for (int j = 0; j < 3; j++)
         {
@@ -54,26 +54,26 @@ void PrintingCube(vector<vector<char>> vec)
         }
         cout << "|" << endl;
     }
-    cout << "           ---------" << endl;
+    cout << "\t           ---------" << endl;
 
     /// Printing RED, BLUE, ORANGE and GREEN Layer...
-    cout << " --------- --------- --------- ---------" << endl;
+    cout << "\t --------- --------- --------- ---------" << endl;
     for (int j = 0; j < 9; j += 3)
     {
-        cout << " | " << vec[2][j] << " " << vec[2][j + 1] << " " << vec[2][j + 2] << " | ";
+        cout << "\t | " << vec[2][j] << " " << vec[2][j + 1] << " " << vec[2][j + 2] << " | ";
         cout << "| " << vec[1][j] << " " << vec[1][j + 1] << " " << vec[1][j + 2] << " | ";
         cout << "| " << vec[4][j] << " " << vec[4][j + 1] << " " << vec[4][j + 2] << " | ";
         cout << "| " << vec[3][j] << " " << vec[3][j + 1] << " " << vec[3][j + 2] << " | ";
         cout << endl;
     }
-    cout << " --------- --------- --------- ---------" << endl;
+    cout << "\t --------- --------- --------- ---------" << endl;
 
     /// Printing YELLOW Layer...
     cnt = 0;
-    cout << "           ---------" << endl;
+    cout << "\t           ---------" << endl;
     for (int i = 0; i < 3; i++)
     {
-        cout << "           ";
+        cout << "\t           ";
         cout << "| ";
         for (int j = 0; j < 3; j++)
         {
@@ -82,6 +82,6 @@ void PrintingCube(vector<vector<char>> vec)
         }
         cout << "|" << endl;
     }
-    cout << "           ---------" << endl;
+    cout << "\t           ---------" << endl;
     cout << endl;
 }

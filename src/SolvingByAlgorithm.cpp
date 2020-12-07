@@ -264,7 +264,9 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Up_Anti_Clock(vec);
         }
     }
+    
     cout << "  Stage 1 Completed... Solved the WHITE CROSS" << endl;
+    PrintingCube(vec);
 
     /**
      *   Stage 2 : Solving WHITE CORNERS in UPPER Layer
@@ -456,8 +458,10 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Green_Down_Clock(vec);
         }
     }
+    
     cout << "  Stage 2 Completed... Solved the UPPER LAYER" << endl;
-
+    PrintingCube(vec);
+    
     /**
      *   Stage 3 : Solving RED, BLUE, ORANGE & GREEN EDGES in MIDDLE LAYER
      */
@@ -766,8 +770,10 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Front_Anti_Clock(vec);
         }
     }
+    
     cout << "  Stage 3 Completed... Solved the MIDDLE LAYER" << endl;
-
+    PrintingCube(vec);
+    
     /**
      *   Stage 4 : Solving YELLOW CROSS in BOTTOM Layer
      */
@@ -847,7 +853,9 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Red_Front_Anti_Clock(vec);
         }
     }
+    
     cout << "  Stage 4 Completed... Solved the YELLOW CROSS" << endl;
+    PrintingCube(vec);
 
     /**
      *   Stage 5 : Solving YELLOW CORNERS in Bottom Layer
@@ -996,7 +1004,9 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Orange_Left_Anti_Clock(vec);
         }
     }
+    
     cout << "  Stage 5 Completed... Solved the YELLOW LAYER" << endl;
+    PrintingCube(vec);
 
     /**
      *   Stage 6 : Solving RED, BLUE, ORANGE & GREEN CORNERS in BOTTOM Layer
@@ -1137,7 +1147,9 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
             vec = Blue_Down_Clock(vec);
         }
     }
+    
     cout << "  Stage 6 Completed... Solved the CORNERS of BOTTOM LAYER" << endl;
+    PrintingCube(vec);
 
     /**
      *   Stage 7 : Solving RED, BLUE, ORANGE & GREEN EDGES in BOTTOM LAYER
@@ -1319,6 +1331,7 @@ vector<vector<char>> SolvingByAlgorithm(vector<vector<char>> vec)
         }
     }
     cout << "  Stage 7 Completed... Solved the BOTTOM LAYER" << endl;
+    PrintingCube(vec);
     cout <<endl;
 
     cout << " Hurray!!! We have Solved the Rubik's Cube..... :)" << endl;
